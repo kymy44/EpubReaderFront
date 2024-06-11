@@ -1,5 +1,4 @@
 // App.js
-import React from "react";
 import EpubViewer from "./components/EpubViewer.jsx";
 
 const App = () => {
