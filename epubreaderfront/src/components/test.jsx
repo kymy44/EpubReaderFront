@@ -35,16 +35,13 @@ const Test = ({ url }) => {
 		renditionRef.current.prev();
 	};
 
+	//impedir que se active el scroll cuando se despliega la navbar
 	useEffect(() => {
 		if (isOpen) {
-			// Desactivar el scroll cuando isOpen es true
 			document.body.style.overflow = "hidden";
 		} else {
-			// Habilitar el scroll cuando isOpen es false
 			document.body.style.overflow = "auto";
 		}
-
-		// Limpiar el efecto cuando el componente se desmonte
 		return () => {
 			document.body.style.overflow = "auto";
 		};
@@ -53,6 +50,10 @@ const Test = ({ url }) => {
 		<>
 			<div className={`sidebar ${isOpen ? "open" : ""}`}>
 				<nav>
+					<img
+						src="../../public/assets/img/logo.png"
+						width="50px"
+					></img>
 					<ul>
 						<li>
 							<a href="#home">Home</a>
