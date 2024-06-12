@@ -34,18 +34,6 @@ const Test = ({ url }) => {
 	const prevPage = () => {
 		renditionRef.current.prev();
 	};
-
-	//impedir que se active el scroll cuando se despliega la navbar
-	useEffect(() => {
-		if (isOpen) {
-			document.body.style.overflow = "hidden";
-		} else {
-			document.body.style.overflow = "auto";
-		}
-		return () => {
-			document.body.style.overflow = "auto";
-		};
-	}, [isOpen]);
 	return (
 		<>
 			<div className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -82,7 +70,7 @@ const Test = ({ url }) => {
 				className={`main-content ${isOpen ? "shifted" : ""}`}
 				ref={viewerRef}
 				style={{
-					width: "90%",
+					width: "100%",
 					height: "100%",
 				}}
 			/>

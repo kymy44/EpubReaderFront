@@ -14,6 +14,8 @@
 	transition: transform 0.3s ease;
 	transform: translateX(-100%);
 	backdrop-filter: blur(5px);
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+	border-radius: 0px 10px 10px 0px;
 }
 .sidebar img {
 	margin-top: 25px;
@@ -45,14 +47,16 @@
 }
 
 .main-content {
-	margin-left: 5%;
 	flex: 1;
 	transition: margin-left 0.3s ease;
 }
-
-/*.main-content.shifted {
-	margin-left: calc(250px + 5%);
-}*/
+/*descomentar para cambiar la animación al abrir la sidebar*/
+.main-content.shifted {
+	margin-left: 250px;
+}
+body:has(.main-content.shifted) {
+	overflow: hidden;
+}
 
 .toggle-bar-button {
 	position: absolute;
@@ -96,7 +100,6 @@
 	transition: ease 0.2s;
 	background-color: rgba(0, 0, 0, 0.1);
 	color: white;
-    
 }
 
 .navigation-button.prev {
