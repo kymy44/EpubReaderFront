@@ -1,69 +1,107 @@
-import  { useEffect, useRef } from "react";
+//EpubRender.jsx
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import ePub from "epubjs";
-
-const EpubViewer = ({ url }) => {
+import "./Test.css";
+const Test = ({ url }) => {
 	const viewerRef = useRef(null);
 	const bookRef = useRef(null);
 	const renditionRef = useRef(null);
-
 	useEffect(() => {
-		const loadBook = async () => {
-			try {
-				// Cargar el libro
-				bookRef.current = ePub(url);
-				renditionRef.current = bookRef.current.renderTo(
-					viewerRef.current,
-					{
-						width: "100%",
-						height: "100%",
-					}
-				);
+		bookRef.current = ePub(url);
+		renditionRef.current = bookRef.current.renderTo(viewerRef.current, {
+			method: "continuous",
+			width: "100%",
+			height: "100%",
+		});
 
-				// Esperar a que el libro esté listo antes de mostrar
-				await bookRef.current.ready;
-
-				renditionRef.current.display();
-			} catch (error) {
-				console.error("Error al cargar el libro ePub:", error);
-			}
-		};
-
-		loadBook();
-
+		renditionRef.current.display();
 		return () => {
+			//limpieza del renderizado del libro anterior
 			console.log("libro destruido");
-			if (renditionRef.current) {
-				renditionRef.current.destroy();
-			}
+			renditionRef.current.destroy();
 		};
-	}, [url]);
+	}, [url]); //suscripcion a cambios en la url
+	const [isOpen, setIsOpen] = useState(false);
 
+	const toggleBar = () => {
+		setIsOpen(!isOpen);
+	};
 	const nextPage = () => {
-		if (renditionRef.current) {
-			renditionRef.current.next();
-		}
+		renditionRef.current.next();
 	};
 
 	const prevPage = () => {
-		if (renditionRef.current) {
-			renditionRef.current.prev();
-		}
+		renditionRef.current.prev();
 	};
 
+	useEffect(() => {
+		if (isOpen) {
+			// Desactivar el scroll cuando isOpen es true
+			document.body.style.overflow = "hidden";
+		} else {
+			// Habilitar el scroll cuando isOpen es false
+			document.body.style.overflow = "auto";
+		}
+
+		// Limpiar el efecto cuando el componente se desmonte
+		return () => {
+			document.body.style.overflow = "auto";
+		};
+	}, [isOpen]);
 	return (
-		<div>
-			<div ref={viewerRef} style={{ width: "100%", height: "80vh" }} />
-			<div>
-				<button onClick={prevPage}>Previous</button>
-				<button onClick={nextPage}>Next</button>
+		<>
+			<div className={`sidebar ${isOpen ? "open" : ""}`}>
+				<nav>
+					<ul>
+						<li>
+							<a href="#home">Home</a>
+						</li>
+						<li>
+							<a href="#services">Services</a>
+						</li>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-		</div>
+
+			<button
+				className={`toggle-bar-button ${isOpen ? "shifted" : ""}`}
+				onClick={toggleBar}
+			>
+				☰
+			</button>
+
+			<div
+				className={`main-content ${isOpen ? "shifted" : ""}`}
+				ref={viewerRef}
+				style={{
+					width: "90%",
+					height: "100%",
+				}}
+			/>
+
+			{!isOpen && (
+				<>
+					<div className="navigation-button prev" onClick={prevPage}>
+						<span>{"<"}</span>
+					</div>
+					<div className="navigation-button next" onClick={nextPage}>
+						<span>{">"}</span>
+					</div>
+				</>
+			)}
+		</>
 	);
 };
 
-EpubViewer.propTypes = {
+Test.propTypes = {
 	url: PropTypes.string.isRequired,
 };
 
-export default EpubViewer;
+export default Test;

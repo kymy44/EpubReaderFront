@@ -1,0 +1,104 @@
+.app-container {
+	display: flex;
+}
+
+.sidebar {
+	z-index: 20;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 250px;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: transform 0.3s ease;
+	transform: translateX(-100%);
+}
+
+.sidebar.open {
+	transform: translateX(0);
+}
+
+.sidebar nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.sidebar nav ul li {
+	padding: 8px 16px;
+}
+
+.sidebar nav ul li a {
+	color: white;
+	text-decoration: none;
+	display: block;
+}
+
+.sidebar nav ul li a:hover {
+	background-color: #575757;
+}
+
+.main-content {
+	margin-left: 5%;
+	flex: 1;
+	transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+	margin-left: calc(250px + 5%);
+}
+
+.toggle-bar-button {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 24px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: black;
+	z-index: 20;
+	transition: 0.3s ease;
+}
+.toggle-bar-button.shifted {
+	left: 270px;
+}
+.toggle-bar-button:focus {
+	outline: none;
+}
+.content {
+	padding: 16px;
+}
+.navigation-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-40%);
+	width: 50px;
+	height: 80%;
+
+	color: hwb(0 0% 100% / 0.3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 10; /* importante para que se superponga al libro*/
+	user-select: none; /* evita la selección de texto*/
+	border-radius: 5px;
+}
+.navigation-button:hover {
+	transition: ease 0.2s;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: white;
+}
+
+.navigation-button.prev {
+	left: 0;
+}
+
+.navigation-button.next {
+	right: 0;
+}
+
+.navigation-button span {
+	font-size: 24px;
+}

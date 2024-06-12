@@ -1,0 +1,33 @@
+.navigation-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-40%);
+	width: 50px;
+	height: 80%;
+
+	color: hwb(0 0% 100% / 0.3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 10; /* importante para que se superponga al libro*/
+	user-select: none; /* evita la selección de texto*/
+	border-radius: 5px;
+}
+.navigation-button:hover {
+	transition: ease 0.2s;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: white;
+}
+
+.navigation-button.prev {
+	left: 0;
+}
+
+.navigation-button.next {
+	right: 0;
+}
+
+.navigation-button span {
+	font-size: 24px;
+}
