@@ -13,3 +13,6 @@
 body:has(.main-content.shifted) {
 	overflow: hidden;
 }
+body:has(.viewer) {
+	overflow: hidden;
+}

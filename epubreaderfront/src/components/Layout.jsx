@@ -1,6 +1,6 @@
 // Layout.js
 import Sidebar from "./Sidebar";
-import Viewer from "./Viewer";
+import Viewer from "./pages/Viewer";
 import useStore from "./store";
 import "./Layout.css";
 const Layout = () => {

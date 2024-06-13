@@ -9,7 +9,7 @@ const SideBar = () => {
 		<>
 			<div className={`sidebar ${isOpen ? "open" : ""}`}>
 				<nav>
-					<img src="/assets/img/logo.png" width="50px"></img>
+					<img src="/assets/img/logo-small.png" width="50px"></img>
 					<ul>
 						<li>
 							<a href="#home">Home</a>

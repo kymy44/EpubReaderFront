@@ -1,9 +1,8 @@
 //Viewer.jsx
 import { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
 import ePub from "epubjs";
 import "./Viewer.css";
-import useStore from "./store";
+import useStore from "../store";
 
 const Viewer = () => {
 	const url = useStore((state) => state.url);
@@ -14,7 +13,7 @@ const Viewer = () => {
 		bookRef.current = ePub(url);
 		renditionRef.current = bookRef.current.renderTo(viewerRef.current, {
 			flow: "paginated",
-			width: "95vw",
+			width: "100vw",
 		});
 
 		renditionRef.current.display();
@@ -32,10 +31,9 @@ const Viewer = () => {
 		renditionRef.current.prev();
 	};
 
-	
 	return (
 		<>
-			<div ref={viewerRef} />
+			<div ref={viewerRef} className="viewer" />
 			<div className="navigation-button prev" onClick={prevPage}>
 				<span>{"<"}</span>
 			</div>
