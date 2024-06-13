@@ -1,11 +1,19 @@
 // App.js
-//import Layout from "./components/Layout";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./components/pages/Landing";
+//import Login from "./pages/Login";
 import Layout from "./components/Layout";
+
 const App = () => {
 	return (
-		
-			<Layout/>
-		
+		<Router>
+			<Routes>
+				<Route path="/" element={<Landing />} />
+				{/*<Route path="/login" element={<Login />} />*/}
+				<Route path="/*" element={<Layout />} />
+			</Routes>
+		</Router>
 	);
 };
 

@@ -30,6 +30,9 @@ const Viewer = () => {
 	const prevPage = () => {
 		renditionRef.current.prev();
 	};
+	if (!url) {
+		return <h1>No hay libro seleccionado</h1>;
+	}
 
 	return (
 		<>

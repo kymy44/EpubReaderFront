@@ -1,0 +1,50 @@
+body {
+	overflow: hidden;
+}
+.landing-container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	padding: 20px;
+}
+.landing-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.landing-container img {
+	max-width: 100%;
+	height: auto;
+}
+.invitation-request {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	transform: translateX(30%);
+}
+.invitation-request h2 {
+	margin-bottom: 100px;
+}
+.already-btn {
+	background-color: transparent;
+	color: magenta;
+	font-weight: lighter;
+	outline: none;
+	border: none;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+}
+.already-btn:hover {
+	outline: none;
+	border: none;
+}
+.already-btn:focus {
+	outline: none;
+	border: none;
+}
+@media (max-width: 768px) {
+	.invitation-request {
+		transform: translateX(0%);
+	}
+}

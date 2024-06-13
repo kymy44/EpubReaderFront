@@ -1,7 +1,8 @@
-//EpubSidebar.jsx
+//Sidebar.jsx
 
 import "./Sidebar.css";
 import useStore from "./store";
+import { Link } from "react-router-dom";
 const SideBar = () => {
 	const isOpen = useStore((state) => state.isOpen);
 	const toggleBar = useStore((state) => state.toggleIsOpen);
@@ -12,13 +13,14 @@ const SideBar = () => {
 					<img src="/assets/img/logo-small.png" width="50px"></img>
 					<ul>
 						<li>
-							<a href="#home">Home</a>
+							<Link className="nav-link" to="/">
+								Inicio
+							</Link>
 						</li>
 						<li>
-							<a href="#services">Services</a>
-						</li>
-						<li>
-							<a href="#about">About</a>
+							<Link className="nav-link" to="/Viewer">
+								Viewer
+							</Link>
 						</li>
 						<li>
 							<a href="#contact">Contact</a>
