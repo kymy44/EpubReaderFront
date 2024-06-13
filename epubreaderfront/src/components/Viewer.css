@@ -31,3 +31,7 @@
 .navigation-button span {
 	font-size: 24px;
 }
+
+.main-content.shifted .navigation-button {
+	display: none;
+}

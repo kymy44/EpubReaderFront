@@ -1,26 +1,25 @@
-//EpubRender.jsx
+//Viewer.jsx
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import ePub from "epubjs";
-import "./EpubRender.css";
-const EpubViewer = ({ url }) => {
+import "./Viewer.css";
+import useStore from "./store";
+
+const Viewer = () => {
+	const url = useStore((state) => state.url);
 	const viewerRef = useRef(null);
 	const bookRef = useRef(null);
 	const renditionRef = useRef(null);
-
 	useEffect(() => {
 		bookRef.current = ePub(url);
 		renditionRef.current = bookRef.current.renderTo(viewerRef.current, {
-			method: "continuous",
-			width: "100%",
-			height: "100%",
+			flow: "paginated",
+			width: "95vw",
 		});
 
 		renditionRef.current.display();
-
 		return () => {
 			//limpieza del renderizado del libro anterior
-			console.log("libro destruido");
 			renditionRef.current.destroy();
 		};
 	}, [url]); //suscripcion a cambios en la url
@@ -33,9 +32,10 @@ const EpubViewer = ({ url }) => {
 		renditionRef.current.prev();
 	};
 
+	
 	return (
 		<>
-			<div ref={viewerRef} style={{ width: "100%", height: "100%" }} />
+			<div ref={viewerRef} />
 			<div className="navigation-button prev" onClick={prevPage}>
 				<span>{"<"}</span>
 			</div>
@@ -45,9 +45,4 @@ const EpubViewer = ({ url }) => {
 		</>
 	);
 };
-
-EpubViewer.propTypes = {
-	url: PropTypes.string.isRequired,
-};
-
-export default EpubViewer;
+export default Viewer;
