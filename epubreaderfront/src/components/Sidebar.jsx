@@ -13,12 +13,12 @@ const SideBar = () => {
 					<img src="/assets/img/logo-small.png" width="50px"></img>
 					<ul>
 						<li>
-							<Link className="nav-link" to="/">
+							<Link className="nav-link" to="/App">
 								Inicio
 							</Link>
 						</li>
 						<li>
-							<Link className="nav-link" to="/Viewer">
+							<Link className="nav-link" to="/viewer">
 								Viewer
 							</Link>
 						</li>

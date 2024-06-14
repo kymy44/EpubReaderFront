@@ -5,7 +5,7 @@ const Landing = () => {
 	return (
 		<div className="landing-container">
 			<div className="landing-logo">
-				<img src="/public/assets/img/logo-big.png" alt="Large Logo" />
+				<img src="/assets/img/logo-big.png" alt="Large Logo" />
 			</div>
 
 			<div className="invitation-request">
@@ -14,7 +14,7 @@ const Landing = () => {
 					<button className="request-btn">
 						Solicitar invitación!
 					</button>
-					<Link className="nav-link" to="/Viewer">
+					<Link className="nav-link" to="/App">
 						<button className="already-btn">
 							Ya tengo una cuenta
 						</button>
