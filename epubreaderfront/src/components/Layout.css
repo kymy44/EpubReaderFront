@@ -2,12 +2,12 @@
 	display: flex;
 }
 .main-content {
-	transition: 0.7s;
+	transition: 0.5s;
 	z-index: 2;
 }
 
 .main-content.shifted {
-	transition-delay: 0.08s;
+
 	margin-left: 250px;
 }
 body:has(.main-content.shifted) {
