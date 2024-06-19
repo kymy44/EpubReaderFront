@@ -3,22 +3,32 @@
 import "./Sidebar.css";
 import useStore from "./store";
 import { Link } from "react-router-dom";
-const SideBar = () => {
+import SignOutButton from "./signOutButton";
+const Sidebar = () => {
 	const isOpen = useStore((state) => state.isOpen);
 	const toggleBar = useStore((state) => state.toggleIsOpen);
 	return (
 		<>
 			<div className={`sidebar ${isOpen ? "open" : ""}`}>
 				<nav>
-					<img src="/assets/img/logo-small.png" width="50px"></img>
+					<img
+						src="/assets/img/logo-small.png"
+						width="50px"
+						alt="Logo"
+					/>
 					<ul>
 						<li>
-							<Link className="nav-link" to="/App">
-								Inicio
+							<Link className="nav-link" to="public">
+								Public Files
 							</Link>
 						</li>
 						<li>
-							<Link className="nav-link" to="/viewer">
+							<Link className="nav-link" to="private">
+								My Files
+							</Link>
+						</li>
+						<li>
+							<Link className="nav-link" to="viewer">
 								Viewer
 							</Link>
 						</li>
@@ -26,6 +36,7 @@ const SideBar = () => {
 							<a href="#contact">Contact</a>
 						</li>
 					</ul>
+					<SignOutButton></SignOutButton>
 				</nav>
 			</div>
 			<button
@@ -38,4 +49,4 @@ const SideBar = () => {
 	);
 };
 
-export default SideBar;
+export default Sidebar;

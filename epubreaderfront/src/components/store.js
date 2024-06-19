@@ -7,6 +7,8 @@ const useStore = create((set) => ({
 
 	url: "http://127.0.0.1:8000/media/files/b4cfb987-2716-4e0c-84b3-535895b77c49.epub",
 	setUrl: (newUrl) => set({ url: newUrl }),
+	token: "",
+	setToken: () => set((state) => ({ token: !state.token })),
 }));
 
 export default useStore;

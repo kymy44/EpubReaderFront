@@ -3,19 +3,20 @@ import { useEffect, useRef } from "react";
 import ePub from "epubjs";
 import "./Viewer.css";
 import useStore from "../store";
-
+import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 const Viewer = () => {
 	const url = useStore((state) => state.url);
 	const viewerRef = useRef(null);
 	const bookRef = useRef(null);
 	const renditionRef = useRef(null);
+	const tal = useAuthHeader();
 	useEffect(() => {
 		bookRef.current = ePub(url);
 		renditionRef.current = bookRef.current.renderTo(viewerRef.current, {
 			flow: "paginated",
 			width: "100vw",
 		});
-
+		console.log(tal);
 		renditionRef.current.display();
 		return () => {
 			//limpieza del renderizado del libro anterior
