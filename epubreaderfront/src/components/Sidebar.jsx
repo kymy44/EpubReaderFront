@@ -3,7 +3,7 @@
 import "./Sidebar.css";
 import useStore from "./store";
 import { Link } from "react-router-dom";
-import SignOutButton from "./signOutButton";
+import SignOutButton from "./SignOutButton";
 const Sidebar = () => {
 	const isOpen = useStore((state) => state.isOpen);
 	const toggleBar = useStore((state) => state.toggleIsOpen);
@@ -23,7 +23,7 @@ const Sidebar = () => {
 							</Link>
 						</li>
 						<li>
-							<Link className="nav-link" to="private">
+							<Link className="nav-link" to="files">
 								My Files
 							</Link>
 						</li>

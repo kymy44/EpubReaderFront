@@ -8,12 +8,13 @@ import refresh from "./components/utils/refresh.js";
 import Viewer from "./components/pages/Viewer.jsx";
 import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import Public from "./components/pages/Public.jsx";
+import Private from "./components/pages/Private.jsx";
 
 const authStore = createStore({
 	authName: "_auth",
 	authType: "cookie",
 	cookieDomain: window.location.hostname,
-	cookieSecure: false, //window.location.protocol === "http:",
+	cookieSecure: window.location.protocol === "https:",
 	refresh: refresh,
 });
 
@@ -28,6 +29,7 @@ const App = () => {
 						<Route element={<Layout />}>
 							<Route path="/viewer" element={<Viewer />} />
 							<Route path="/public" element={<Public />} />
+							<Route path="/files" element={<Private />} />
 						</Route>
 					</Route>
 				</Routes>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../utils/axiosConfig";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
@@ -13,10 +13,7 @@ const Login = () => {
 		setError("");
 
 		try {
-			const response = await axios.post(
-				"http://localhost:8000/api/token/",
-				formData
-			);
+			const response = await axios.post("token/", formData);
 
 			console.log("API Response:", response.data);
 

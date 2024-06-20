@@ -4,7 +4,7 @@ import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 import Card from "../Card";
 
-const Public = () => {
+const Private = () => {
 	const [files, setFiles] = useState([]);
 	const authHeader = useAuthHeader(); // preparamos los headers con el token de autenticación
 	console.log(authHeader);
@@ -13,7 +13,7 @@ const Public = () => {
 			headers: { Authorization: authHeader },
 		};
 		axios
-			.get("/public", axiosConfig)
+			.get("/files", axiosConfig)
 			.then((response) => {
 				setFiles(response.data);
 			})
@@ -24,8 +24,7 @@ const Public = () => {
 
 	return (
 		<div>
-			
-			<h1>Lista de Archivos Públicos</h1>
+			<h1>Lista de Archivos Privados</h1>
 			<div className="file-list">
 				{files.map((file, index) => (
 					<Card
@@ -40,4 +39,4 @@ const Public = () => {
 	);
 };
 
-export default Public;
+export default Private;

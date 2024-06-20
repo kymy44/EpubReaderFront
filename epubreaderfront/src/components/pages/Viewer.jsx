@@ -9,15 +9,14 @@ const Viewer = () => {
 	const viewerRef = useRef(null);
 	const bookRef = useRef(null);
 	const renditionRef = useRef(null);
-	const tal = useAuthHeader();
 	useEffect(() => {
 		bookRef.current = ePub(url);
 		renditionRef.current = bookRef.current.renderTo(viewerRef.current, {
 			flow: "paginated",
 			width: "100vw",
 		});
-		console.log(tal);
 		renditionRef.current.display();
+		console.log(url);
 		return () => {
 			//limpieza del renderizado del libro anterior
 			renditionRef.current.destroy();

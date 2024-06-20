@@ -1,10 +1,9 @@
 //Landing.jsx
-import SideBar from "../Sidebar";
 import "./Landing.css";
 import { Link } from "react-router-dom";
 const Landing = () => {
 	return (
-		<><SideBar></SideBar>
+		<>
 			<div className="landing-container">
 				<div className="landing-logo">
 					<img src="/assets/img/logo-big.png" alt="Large Logo" />

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "../utils/axiosConfig";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
-
 import Card from "../Card";
 
-const Public = () => {
+const Upload = () => {
 	const [files, setFiles] = useState([]);
 	const authHeader = useAuthHeader(); // preparamos los headers con el token de autenticación
 	console.log(authHeader);
@@ -24,20 +23,14 @@ const Public = () => {
 
 	return (
 		<div>
-			
 			<h1>Lista de Archivos Públicos</h1>
 			<div className="file-list">
 				{files.map((file, index) => (
-					<Card
-						key={index}
-						id={file.id}
-						title={file.title}
-						newUrl={file.file}
-					/>
+					<Card key={index} title={file.title} newUrl={file.file} />
 				))}
 			</div>
 		</div>
 	);
 };
 
-export default Public;
+export default Upload;

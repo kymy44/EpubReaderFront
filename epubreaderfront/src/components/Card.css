@@ -1,41 +1,42 @@
 .card {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease;
 
-    /* Añade estilos específicos según el tamaño del componente */
-    width: 300px; /* Por ejemplo, ajusta el ancho según sea necesario */
+	/* Añade estilos específicos según el tamaño del componente */
+	width: 300px; /* Por ejemplo, ajusta el ancho según sea necesario */
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+	color: #000;
 }
 
 .card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
+	font-size: 1rem;
+	color: #000000;
+	margin-bottom: 15px;
 }
 
 .card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .card button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
