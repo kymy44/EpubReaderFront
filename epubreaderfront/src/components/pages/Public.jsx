@@ -7,7 +7,6 @@ import Card from "../Card";
 const Public = () => {
 	const [files, setFiles] = useState([]);
 	const authHeader = useAuthHeader(); // preparamos los headers con el token de autenticación
-	console.log(authHeader);
 	useEffect(() => {
 		const axiosConfig = {
 			headers: { Authorization: authHeader },

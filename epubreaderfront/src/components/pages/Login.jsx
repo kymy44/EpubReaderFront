@@ -4,6 +4,7 @@ import useSignIn from "react-auth-kit/hooks/useSignIn";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import refresh from "../utils/refresh";
 const Login = () => {
 	const [error, setError] = useState("");
 	const signIn = useSignIn();
@@ -16,10 +17,7 @@ const Login = () => {
 		try {
 			const response = await axios.post("token/", formData);
 
-			console.log("API Response:", response.data);
-
 			if (response.data) {
-				console.log("hay response.data.access", response.data);
 				if (
 					signIn({
 						auth: {
@@ -29,7 +27,7 @@ const Login = () => {
 						refresh: response.data.refresh,
 					})
 				) {
-					navigate("/viewer");
+					navigate("/public");
 				} else {
 					setError("Token no encontrado en la respuesta.");
 				}

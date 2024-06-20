@@ -8,7 +8,6 @@ const Card = ({ title, id, newUrl }) => {
 	const setUrl = useStore((state) => state.setUrl);
 	const handleClick = () => {
 		setUrl(newUrl); // La URL completa se construye en el store
-		console.log("el id es ", id);
 	};
 
 	return (

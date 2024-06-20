@@ -16,7 +16,6 @@ const Viewer = () => {
 			width: "100vw",
 		});
 		renditionRef.current.display();
-		console.log(url);
 		return () => {
 			//limpieza del renderizado del libro anterior
 			renditionRef.current.destroy();
