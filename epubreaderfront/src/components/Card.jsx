@@ -1,9 +1,9 @@
 //Card.jsx
 import React from "react";
 import "./Card.css";
-import useStore from "./store";
+import useStore from "./store.js";
 import { Link } from "react-router-dom";
-import DeleteButton from "./DeleteButton";
+import DeleteButton from "./DeleteButton.jsx";
 const Card = ({ title, id, newUrl }) => {
 	const setUrl = useStore((state) => state.setUrl);
 	const handleClick = () => {

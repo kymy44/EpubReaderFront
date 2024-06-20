@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "../utils/axiosConfig";
+import axios from "../utils/axiosConfig.js";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import "./Public.css";
-import Card from "../Card";
+import Card from "../Card.jsx";
 
 const Public = () => {
 	const [files, setFiles] = useState([]);

@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "./utils/axiosConfig";
+import axios from "./utils/axiosConfig.js";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 const DeleteButton = ({ id }) => {
 	const authHeader = useAuthHeader();
@@ -14,7 +14,7 @@ const DeleteButton = ({ id }) => {
 			.delete("/files/delete", axiosConfig)
 			.then((response) => {
 				console.log(`Archivo con id ${id} eliminado con éxito`);
-				// Aquí puedes actualizar el estado de tu aplicación para reflejar la eliminación
+				
 			})
 			.catch((error) => {
 				console.error(

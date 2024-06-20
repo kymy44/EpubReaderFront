@@ -1,7 +1,7 @@
 // Layout.js
-import Sidebar from "./Sidebar";
-import Viewer from "./pages/Viewer";
-import useStore from "./store";
+import Sidebar from "./Sidebar.jsx";
+import Viewer from "./pages/Viewer.jsx";
+import useStore from "./store.js";
 import "./Layout.css";
 //import Landing from "./pages/Landing";
 import {

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./components/pages/Landing";
-import Login from "./components/pages/Login";
-import Layout from "./components/Layout";
+import Landing from "./components/pages/Landing.jsx";
+import Login from "./components/pages/Login.jsx";
+import Layout from "./components/Layout.jsx";
 import createStore from "react-auth-kit/createStore";
 import AuthProvider from "react-auth-kit/AuthProvider";
 import refresh from "./components/utils/refresh.js";

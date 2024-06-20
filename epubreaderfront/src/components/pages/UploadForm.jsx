@@ -7,7 +7,7 @@ const UploadForm = () => {
 	const [file, setFile] = useState(null);
 	const [title, setTitle] = useState("");
 	const [isPublic, setIsPublic] = useState(false);
-	const authHeader = useAuthHeader(); // Obtén el token de autorización
+	const authHeader = useAuthHeader(); 
 
 	const handleFileChange = (event) => {
 		setFile(event.target.files[0]);
@@ -44,7 +44,6 @@ const UploadForm = () => {
 			.post("/files/", formData, axiosConfig)
 			.then((response) => {
 				console.log("Archivo subido con éxito", response);
-				// Aquí puedes actualizar el estado de tu aplicación si es necesario
 			})
 			.catch((error) => {
 				console.error("Error subiendo el archivo:", error);

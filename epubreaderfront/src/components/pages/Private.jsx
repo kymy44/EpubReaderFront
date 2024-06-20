@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "../utils/axiosConfig";
+import axios from "../utils/axiosConfig.js";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 import Card from "../Card";

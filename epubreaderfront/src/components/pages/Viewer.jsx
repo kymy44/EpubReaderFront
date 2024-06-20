@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import ePub from "epubjs";
 import "./Viewer.css";
-import useStore from "../store";
+import useStore from "../store.js";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 const Viewer = () => {
 	const url = useStore((state) => state.url);

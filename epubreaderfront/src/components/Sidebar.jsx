@@ -1,9 +1,9 @@
 //Sidebar.jsx
 
 import "./Sidebar.css";
-import useStore from "./store";
+import useStore from "./store.js";
 import { Link } from "react-router-dom";
-import SignOutButton from "./SignOutButton";
+import SignOutButton from "./SignOutButton.jsx";
 const Sidebar = () => {
 	const isOpen = useStore((state) => state.isOpen);
 	const toggleBar = useStore((state) => state.toggleIsOpen);
