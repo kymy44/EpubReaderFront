@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../utils/axiosConfig";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
-
+import "./Public.css";
 import Card from "../Card";
 
 const Public = () => {
@@ -23,20 +23,20 @@ const Public = () => {
 	}, [authHeader]);
 
 	return (
-		<div>
-			
-			<h1>Lista de Archivos Públicos</h1>
-			<div className="file-list">
-				{files.map((file, index) => (
-					<Card
-						key={index}
-						id={file.id}
-						title={file.title}
-						newUrl={file.file}
-					/>
-				))}
+		<>
+			<div className="container">
+				<div className="file-list">
+					{files.map((file, index) => (
+						<Card
+							key={index}
+							id={file.id}
+							title={file.title}
+							newUrl={file.file}
+						/>
+					))}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -1,0 +1,65 @@
+/* Container styles */
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center; /* Center horizontally */
+	height: 100vh; /* Full height of the viewport */
+	width: 100vw; /* Full width of the viewport */
+	background-color: #f0f0f0; /* Optional: to make it clear that it's centered */
+}
+
+/* General form styles */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: hsla(0, 0%, 0%, 0.24);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(5px);
+	width: 300px;
+}
+
+/* Input field styles */
+form input[type="text"],
+form input[type="password"] {
+	width: 80%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid hsl(0, 0%, 34%);
+	border-radius: 5px;
+	background-color: hsla(0, 0%, 100%, 0.8);
+	color: hsl(0, 0%, 34%);
+	transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+	outline: none;
+	border-color: hsl(0, 0%, 34%);
+}
+
+/* Submit button styles */
+form button[type="submit"] {
+	width: 80%;
+	padding: 10px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 5px;
+	background-color: hsl(0, 0%, 34%);
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+	background-color: hsl(0, 0%, 44%);
+}
+
+/* Error message styles */
+form p {
+	color: red;
+	margin-top: 10px;
+}

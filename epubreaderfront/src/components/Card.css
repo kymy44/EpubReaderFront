@@ -2,29 +2,29 @@
 	background-color: #f0f0f0;
 	border: 1px solid #ccc;
 	border-radius: 8px;
-	padding: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s ease;
-
-	/* Añade estilos específicos según el tamaño del componente */
-	width: 300px; /* Por ejemplo, ajusta el ancho según sea necesario */
+	padding: 16px;
+	margin: 10px;
+	width: 300px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
 }
 
 .card:hover {
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px);
 }
 
 .card h2 {
-	font-size: 1.5rem;
+	font-size: 18px;
 	margin-bottom: 10px;
-	color: #000;
 }
 
-.card p {
-	font-size: 1rem;
-	color: #000000;
-	margin-bottom: 15px;
+.nav-link {
+	text-decoration: none;
+	color: #007bff;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
 }
 
 .card button {
@@ -32,11 +32,12 @@
 	color: white;
 	border: none;
 	padding: 8px 16px;
-	border-radius: 4px;
 	cursor: pointer;
+	border-radius: 4px;
 	transition: background-color 0.3s ease;
 }
 
 .card button:hover {
 	background-color: #0056b3;
 }
+

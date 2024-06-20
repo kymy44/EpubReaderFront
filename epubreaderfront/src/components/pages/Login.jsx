@@ -3,6 +3,7 @@ import axios from "../utils/axiosConfig";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 const Login = () => {
 	const [error, setError] = useState("");
 	const signIn = useSignIn();
@@ -45,26 +46,28 @@ const Login = () => {
 	};
 
 	return (
-		<form onSubmit={onSubmit}>
-			<input
-				type="text"
-				placeholder="Username"
-				value={formData.username}
-				onChange={(e) =>
-					setFormData({ ...formData, username: e.target.value })
-				}
-			/>
-			<input
-				type="password"
-				placeholder="Password"
-				value={formData.password}
-				onChange={(e) =>
-					setFormData({ ...formData, password: e.target.value })
-				}
-			/>
-			<button type="submit">Submit</button>
-			{error && <p>{error}</p>}
-		</form>
+		<div className="container">
+			<form onSubmit={onSubmit}>
+				<input
+					type="text"
+					placeholder="Username"
+					value={formData.username}
+					onChange={(e) =>
+						setFormData({ ...formData, username: e.target.value })
+					}
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					value={formData.password}
+					onChange={(e) =>
+						setFormData({ ...formData, password: e.target.value })
+					}
+				/>
+				<button type="submit">Log in!</button>
+				{error && <p>{error}</p>}
+			</form>
+		</div>
 	);
 };
 

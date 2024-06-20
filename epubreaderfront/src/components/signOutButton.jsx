@@ -11,7 +11,7 @@ const SignOutButton = () => {
 		navigate("/login");
 	};
 
-	return <button onClick={handleSignOut}>Sign Out</button>;
+	return <a onClick={handleSignOut}>Sign Out</a>;
 };
 
 export default SignOutButton;

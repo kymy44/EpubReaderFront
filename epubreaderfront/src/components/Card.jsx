@@ -15,7 +15,7 @@ const Card = ({ title, id, newUrl }) => {
 		<div className="card">
 			<h2>{title}</h2>
 			<Link className="nav-link" to="/viewer">
-				<button onClick={handleClick}>Cambiar URL</button>
+				<button onClick={handleClick}>Leer</button>
 			</Link>
 			{location.pathname === "/files" && <DeleteButton id={id} />}
 		</div>

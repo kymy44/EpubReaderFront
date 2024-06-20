@@ -23,8 +23,7 @@ const Private = () => {
 	}, [authHeader]);
 
 	return (
-		<div>
-			<h1>Lista de Archivos Privados</h1>
+		<div className="container">
 			<div className="file-list">
 				{files.map((file, index) => (
 					<Card

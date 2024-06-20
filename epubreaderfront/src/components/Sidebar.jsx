@@ -33,10 +33,14 @@ const Sidebar = () => {
 							</Link>
 						</li>
 						<li>
-							<a href="#contact">Contact</a>
+							<Link className="nav-link" to="upload">
+								Upload
+							</Link>
+						</li>
+						<li>
+							<SignOutButton></SignOutButton>
 						</li>
 					</ul>
-					<SignOutButton></SignOutButton>
 				</nav>
 			</div>
 			<button

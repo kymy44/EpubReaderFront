@@ -2,12 +2,12 @@ import React from "react";
 import axios from "./utils/axiosConfig";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 const DeleteButton = ({ id }) => {
-	const authHeader = useAuthHeader(); // Obtén el token de autorización
+	const authHeader = useAuthHeader();
 	const handleDelete = () => {
 		const axiosConfig = {
 			headers: { Authorization: authHeader },
 
-			data: { id }, // Incluye el id en el cuerpo de la solicitud
+			data: { id }, //id en el cuerpo de la solicitud
 		};
 
 		axios
@@ -25,7 +25,7 @@ const DeleteButton = ({ id }) => {
 	};
 
 	return (
-		<button onClick={handleDelete} style={{ color: "red" }}>
+		<button onClick={handleDelete} className="delete-button">
 			Eliminar
 		</button>
 	);
